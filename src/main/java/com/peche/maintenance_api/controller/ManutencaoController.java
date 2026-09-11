@@ -5,6 +5,8 @@ import com.peche.maintenance_api.service.ManutencaoService;
 import com.peche.maintenance_api.service.facade.ManutencaoFacade;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import jakarta.validation.Valid;
+import com.peche.maintenance_api.dto.ManutencaoRequestDTO;
 
 import java.util.List;
 
@@ -34,8 +36,18 @@ public class ManutencaoController {
     }
 
     @PostMapping
-    public ResponseEntity<Manutencao> criar(@RequestBody Manutencao manutencao) {
-        return ResponseEntity.ok(facade.criar(manutencao));
+        public ResponseEntity<Manutencao> criar(
+        @Valid @RequestBody ManutencaoRequestDTO dto) {
+
+        Manutencao manutencao = new Manutencao();
+
+        manutencao.setCliente(dto.getCliente());
+        manutencao.setEquipamento(dto.getEquipamento());
+        manutencao.setProblema(dto.getProblema());
+        manutencao.setPrioridade(dto.getPrioridade());
+        manutencao.setStatus(dto.getStatus());
+
+    return ResponseEntity.ok(facade.criar(manutencao));
     }
 
     @DeleteMapping("/{id}")
