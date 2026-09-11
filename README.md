@@ -142,7 +142,7 @@ O `.env` é utilizado apenas na configuração local e permanece fora do version
 
 A API possui documentação interativa através do Swagger UI, permitindo visualizar e testar os endpoints disponíveis.
 
-![Swagger UI](/maintenance-api/docs/swagger.png)
+![Swagger UI](./docs/swagger.png)
 
 
 ## ⌁ Exemplo
