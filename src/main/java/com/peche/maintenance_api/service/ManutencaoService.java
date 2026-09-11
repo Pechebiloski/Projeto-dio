@@ -2,7 +2,6 @@ package com.peche.maintenance_api.service;
 
 import com.peche.maintenance_api.model.Manutencao;
 import com.peche.maintenance_api.repository.ManutencaoRepository;
-import com.peche.maintenance_api.service.strategy.CalculoOrcamentoService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,14 +10,9 @@ import java.util.List;
 public class ManutencaoService {
 
     private final ManutencaoRepository repository;
-    private final CalculoOrcamentoService calculoOrcamentoService;
 
-    public ManutencaoService(
-            ManutencaoRepository repository,
-            CalculoOrcamentoService calculoOrcamentoService) {
-
+    public ManutencaoService(ManutencaoRepository repository) {
         this.repository = repository;
-        this.calculoOrcamentoService = calculoOrcamentoService;
     }
 
     public List<Manutencao> listarTodas() {
@@ -28,15 +22,6 @@ public class ManutencaoService {
     public Manutencao buscarPorId(String id) {
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Manutenção não encontrada"));
-    }
-
-    public Manutencao salvar(Manutencao manutencao) {
-
-        double valor = calculoOrcamentoService.calcular(manutencao);
-
-        manutencao.setValor(valor);
-
-        return repository.save(manutencao);
     }
 
     public void excluir(String id) {
