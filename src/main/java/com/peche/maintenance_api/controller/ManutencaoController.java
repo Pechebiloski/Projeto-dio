@@ -1,12 +1,14 @@
 package com.peche.maintenance_api.controller;
 
+
+import com.peche.maintenance_api.dto.ManutencaoRequestDTO;
 import com.peche.maintenance_api.model.Manutencao;
 import com.peche.maintenance_api.service.ManutencaoService;
 import com.peche.maintenance_api.service.facade.ManutencaoFacade;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import jakarta.validation.Valid;
-import com.peche.maintenance_api.dto.ManutencaoRequestDTO;
+
 
 import java.util.List;
 
@@ -56,17 +58,17 @@ public class ManutencaoController {
         return ResponseEntity.noContent().build();
     }
     @PutMapping("/{id}")
-public ResponseEntity<Manutencao> atualizar(
+    public ResponseEntity<Manutencao> atualizar(
         @PathVariable String id,
-        @RequestBody Manutencao manutencao) {
+        @Valid @RequestBody ManutencaoRequestDTO dto) {
 
-    Manutencao existente = service.buscarPorId(id);
+     Manutencao existente = service.buscarPorId(id);
 
-    existente.setCliente(manutencao.getCliente());
-    existente.setEquipamento(manutencao.getEquipamento());
-    existente.setProblema(manutencao.getProblema());
-    existente.setPrioridade(manutencao.getPrioridade());
-    existente.setStatus(manutencao.getStatus());
+        existente.setCliente(dto.getCliente());
+        existente.setEquipamento(dto.getEquipamento());
+        existente.setProblema(dto.getProblema());
+        existente.setPrioridade(dto.getPrioridade());
+        existente.setStatus(dto.getStatus());
 
     return ResponseEntity.ok(facade.criar(existente));
 }
