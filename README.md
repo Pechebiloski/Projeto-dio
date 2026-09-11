@@ -2,7 +2,7 @@
 
 API REST desenvolvida como projeto final do **Bootcamp de Java da DIO em parceria com o Itaú**.
 
-O projeto foi criado do zero a partir da proposta de aplicar os conceitos de **Design Patterns** estudados durante a formação, utilizando um contexto diferente dos exemplos apresentados no bootcamp.
+A partir da estrutura e dos conceitos apresentados como referência no desafio, foi desenvolvida uma aplicação própria para gerenciamento de serviços de manutenção técnica.
 
 ⊹ ˚₊ ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ ₊˚ ⊹
 
@@ -261,7 +261,7 @@ Também foi uma prática de organização de responsabilidades entre controller,
 
 Projeto desenvolvido para o desafio final de **Padrões de Projeto** do **Bootcamp de Java da DIO em parceria com o Itaú**.
 
-A proposta escolhida foi **Criar do Zero**, desenvolvendo uma aplicação própria para colocar os conceitos estudados em prática.
+A proposta escolhida foi ‘Criar do Zero’, desenvolvendo uma aplicação própria a partir dos conceitos e referências disponibilizados durante a formação.
 
 ⊹ ˚₊ ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ ₊˚ ⊹
 
