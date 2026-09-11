@@ -228,7 +228,7 @@ git clone https://github.com/Pechebiloski/Projeto-dio
 Entre na pasta:
 
 ```bash
-cd maintenance-api
+cd Projeto-dio
 ```
 
 Configure a conexão com o MongoDB no `.env`.
