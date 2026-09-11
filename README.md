@@ -138,6 +138,13 @@ O `.env` é utilizado apenas na configuração local e permanece fora do version
 | `PUT`    | `/manutencoes/{id}` | Atualiza uma manutenção |
 | `DELETE` | `/manutencoes/{id}` | Exclui uma manutenção   |
 
+## ⌁ Swagger UI
+
+A API possui documentação interativa através do Swagger UI, permitindo visualizar e testar os endpoints disponíveis.
+
+![Swagger UI](/maintenance-api/docs/swagger.png)
+
+
 ## ⌁ Exemplo
 
 ### `POST /manutencoes`
